@@ -11,8 +11,8 @@
 void cobraNaCaixa() {
 
     char boxes[5] = {'-', '-', '-', '-', '-'};
-    int snakeBox, buttonBox;
-    int playerTurn, chosenBox;
+    int snakeBox, buttonBox, chosenBox;;
+    int playerTurn;
     char player1[30], player2[30];
 
     printf("A tumba do Fárao Neebe é escura e cheia de mistérios...\n");
@@ -73,10 +73,10 @@ void cobraNaCaixa() {
     }
     boxes[buttonBox] = 'B';
 
-    /* for (int i = 0; i < 5; i++) {
+     for (int i = 0; i < 5; i++) {
         printf("%c ", boxes[i]);
     }
-    printf("\n"); */
+    printf("\n");
 
     // sorteando qual jogador será o da vez.
     playerTurn = rand() % 2;
@@ -92,6 +92,12 @@ void cobraNaCaixa() {
         scanf("%d", &chosenBox);
         if (boxes[chosenBox - 1] == 'S') {
             printf("Oh não! Você escolheu a caixa com a cobra!\n");
+            printf("      .-=-.          .--.  \n");
+            printf("      __        .'     '.       /  \" )\n");
+            printf("  _   .'  '.     /   .-.   \\     /  .-'\\\n");
+            printf(" ( \\ / .-.  \\   /   /   \\   \\   /  /    ^\n");
+            printf("  \\ `-` /   \\  `-'   /     \\   `-`  /\n");
+            printf(" jgs`-.-`     '.____.'       `.____.'\n");
             printf("Em um rápido movimento a cobra morde você e seu amigo!\n");
             printf("GAME OVER\n");
             break;
