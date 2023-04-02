@@ -129,16 +129,17 @@ void cobraNaCaixa() {
 
 void quiz() {
     int continueGame = 1;
+    int pontuacao = 0;
     char perguntas[5][100] = {
             "Qual o nome da startup criada por alunos de EC?\nA) Zenita\nB) "
             "Zenith\nC) Zona\nD) Drones.com\n",
-            "Qual a melhor turma de Ciencia da Computação do Cesupa?\nA) BCCMA3\nB) "
+            "\nQual a melhor turma de Ciencia da Computação do Cesupa?\nA) BCCMA3\nB) "
             "BCCMA1\nC) BCCMA5\nD) BCCTA3\n",
-            "O melhor sistema de catalogação de livros é?\nA) Dudu\nB) Aranduba\nC) "
+            "\nO melhor sistema de catalogação de livros é?\nA) Dudu\nB) Aranduba\nC) "
             "Arandu\nD) Anduru\n",
-            "Quem foi o(a) autor(a) da frase -Não gostou, faz melhor-?\nA)  "
+            "\nQuem foi o(a) autor(a) da frase -Não gostou, faz melhor-?\nA)  "
             "Isaac\nB) Fabio\nC) Ale\nD) Luciana\n",
-            "Qual predio do Cesupa possui estacionameno para os alunos?\nA) ARGO\nB) "
+            "\nQual predio do Cesupa possui estacionameno para os alunos?\nA) ARGO\nB) "
             "DIREITO\nC) ARQ E ENG\nD) PISC\n"};
     char respostaCorreta[5] = {'B', 'A', 'C', 'C', 'B'};
     int i;
@@ -148,11 +149,16 @@ void quiz() {
         scanf(" %c", &respostaDoUsuário);
         if (respostaDoUsuário == respostaCorreta[i]) {
             printf("\nVoce acertou!\n");
+            pontuacao++;
+            printf("+1 ponto!");
+            sleep(1);
         } else {
             printf("\nVoce errou! Resposta certa %c.\n", respostaCorreta[i]);
+            sleep(1);
         }
     }
-    printf("Deseja jogar novamente? (1 - Sim, 0 - Não): ");
+    printf("\nPontuação total: %d", pontuacao);
+    printf("\nDeseja jogar novamente? (1 - Sim, 0 - Não): ");
     scanf("%d", &continueGame);
     if (continueGame == 0) {
         main();
